@@ -1,0 +1,5 @@
+Experiment,10Fold_CV_Accuracy,10Fold_CV_F1_Macro,Chrono_Test_Accuracy,Chrono_Test_F1_Macro
+"Baseline Predictors (BAR, ATMP)",0.4916,0.4898,0.3742,0.3581
+Extra Exp (i): Add DPD + APD (All-Null Sensors Imputed),0.4931,0.4926,0.3926,0.371
+Extra Exp (ii): Add Station (Location Shortcut),0.512,0.5113,0.4438,0.44
+Extra Exp (iii): Add GST (Wind Gust Feature),0.9287,0.9287,0.9284,0.9284

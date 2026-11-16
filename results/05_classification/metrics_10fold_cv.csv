@@ -1,0 +1,5 @@
+Model,Protocol,Accuracy,Precision_Macro,Recall_Macro,F1_Macro,F1_Low,F1_Mid,F1_High
+Majority Baseline,Stratified 10-Fold CV,0.3347,0.1116,0.3333,0.1672,0.0,0.5015,0.0
+Decision Tree,Stratified 10-Fold CV,0.4937,0.5195,0.494,0.4885,0.4706,0.4688,0.526
+Random Forest,Stratified 10-Fold CV,0.4916,0.4922,0.492,0.4898,0.5038,0.4234,0.5421
+Naive Bayes,Stratified 10-Fold CV,0.4452,0.4553,0.4457,0.4336,0.5065,0.2935,0.5006

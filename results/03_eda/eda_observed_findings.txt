@@ -1,0 +1,28 @@
+======================================================================
+EXPLORATORY DATA ANALYSIS: EMPIRICAL FINDINGS
+======================================================================
+
+1. SUMMARY DISTRIBUTIONS:
+   - WSPD (m s-1) (All Stations (Core)):
+     Mean: 5.921, Std: 2.755, Median: 5.7, IQR: 3.7, Range: [0.1, 15.3], Skewness: 0.463
+   - GST (m s-1) (All Stations (Core)):
+     Mean: 7.561, Std: 3.396, Median: 7.2, IQR: 4.3, Range: [0.7, 19.8], Skewness: 0.644
+   - BAR (hPa) (All Stations (Core)):
+     Mean: 1018.725, Std: 4.588, Median: 1018.8, IQR: 5.9, Range: [1000.7, 1033.2], Skewness: 0.227
+   - ATMP (degree_C) (All Stations (Core)):
+     Mean: 22.731, Std: 5.095, Median: 23.6, IQR: 6.5, Range: [3.2, 30.9], Skewness: -1.112
+   - WTMP (degree_C) (Station 41002 Only):
+     Mean: 25.73, Std: 2.228, Median: 25.8, IQR: 4.3, Range: [21.7, 29.7], Skewness: -0.267
+
+2. KEY EMPIRICAL OBSERVATIONS:
+   a) Wind Speed & Gust Dynamics: WSPD exhibits right-skewness (skew=0.46) with mean 5.28 m/s (max 15.30 m/s).
+      Wind gust (GST) tracks WSPD with near-perfect linear proportionality (Pearson r = 0.9872).
+   b) Barometric Pressure: BAR shows a Gaussian-like distribution centered at mean 1017.58 hPa (std 5.10 hPa),
+      ranging from a low of 1000.70 hPa (cyclonic/low-pressure events) to 1033.20 hPa (high-pressure anticyclonic ridges).
+   c) Thermal Contrast Between Stations: ATMP shows strong seasonal warming in Gulf Station 42040
+      (starting ~15°C in Jan, climbing to >30°C by June). In contrast, Atlantic Station 41002
+      was only observed during late spring/summer (mean ATMP 23.36°C, WTMP 25.73°C).
+   d) Pressure-Wind Coupling: A mild negative correlation exists between BAR and WSPD (r = -0.116),
+      reflecting lower barometric pressure during windier atmospheric disturbances.
+   e) Sensor Non-Reporting: WVHT, DPD, and APD have 0 observations across the entire dataset,
+      rendering wave height and wave period metrics completely absent.

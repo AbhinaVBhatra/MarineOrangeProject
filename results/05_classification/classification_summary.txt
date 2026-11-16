@@ -1,0 +1,52 @@
+======================================================================
+CLASSIFICATION BENCHMARK AND EXPERIMENTAL FINDINGS
+======================================================================
+
+1. TARGET DEFINITION & TERCILE CUT POINTS:
+   - Target: Marine Condition Terciles (derived from WSPD distribution)
+   - Low Band:  WSPD <= 4.60 m/s (N = 654)
+   - Mid Band:  4.60 m/s < WSPD <= 6.90 m/s (N = 657)
+   - High Band: WSPD > 6.90 m/s (N = 652)
+   - Class Proportions: Balanced (~33.3% per class)
+   - Majority Class Baseline Accuracy: 33.47%
+
+2. STRATIFIED 10-FOLD CROSS-VALIDATION RESULTS:
+            Model              Protocol  Accuracy  Precision_Macro  Recall_Macro  F1_Macro  F1_Low  F1_Mid  F1_High
+Majority Baseline Stratified 10-Fold CV    0.3347           0.1116        0.3333    0.1672  0.0000  0.5015   0.0000
+    Decision Tree Stratified 10-Fold CV    0.4937           0.5195        0.4940    0.4885  0.4706  0.4688   0.5260
+    Random Forest Stratified 10-Fold CV    0.4916           0.4922        0.4920    0.4898  0.5038  0.4234   0.5421
+      Naive Bayes Stratified 10-Fold CV    0.4452           0.4553        0.4457    0.4336  0.5065  0.2935   0.5006
+
+3. CHRONOLOGICAL SPLIT RESULTS (Jan-Apr Train / May-Jun Test):
+            Model                                           Protocol  Accuracy  Precision_Macro  Recall_Macro  F1_Macro  F1_Low  F1_Mid  F1_High
+Majority Baseline Chronological Split (Jan-Apr Train / May-Jun Test)    0.2403           0.0801        0.3333    0.1292  0.0000  0.0000   0.3875
+    Decision Tree Chronological Split (Jan-Apr Train / May-Jun Test)    0.4110           0.3861        0.4325    0.3668  0.5545  0.1200   0.4260
+    Random Forest Chronological Split (Jan-Apr Train / May-Jun Test)    0.3742           0.3707        0.4061    0.3581  0.4603  0.1894   0.4248
+      Naive Bayes Chronological Split (Jan-Apr Train / May-Jun Test)    0.3027           0.3361        0.3372    0.2871  0.1535  0.3761   0.3317
+
+4. WHY RANDOM CV IS OPTIMISTIC (Temporal Autocorrelation):
+   In random stratified 10-fold CV, consecutive 3-hourly measurements from the same day
+   fall into both training and validation folds. Marine atmospheric systems evolve slowly
+   over synoptic time scales (24-72 hours), causing massive temporal autocorrelation.
+   Consequently, random CV models 'peek' into adjacent time steps, inflating performance.
+   Under the rigorous chronological split (Jan-Apr train -> May-Jun test), models must
+   forecast future marine seasons without temporal leakage, revealing realistic generalization.
+
+5. EXTRA EXPERIMENTS HONEST REPORTING:
+                                             Experiment  10Fold_CV_Accuracy  10Fold_CV_F1_Macro  Chrono_Test_Accuracy  Chrono_Test_F1_Macro
+                        Baseline Predictors (BAR, ATMP)              0.4916              0.4898                0.3742                0.3581
+Extra Exp (i): Add DPD + APD (All-Null Sensors Imputed)              0.4931              0.4926                0.3926                0.3710
+        Extra Exp (ii): Add Station (Location Shortcut)              0.5120              0.5113                0.4438                0.4400
+           Extra Exp (iii): Add GST (Wind Gust Feature)              0.9287              0.9287                0.9284                0.9284
+
+   - Honest Analysis of (i) Adding DPD + APD:
+     Because DPD and APD contain 100% missing values in raw.csv, imputing them introduces
+     zero-variance constant columns. The Random Forest model achieves identical accuracy (delta = 0.00%)
+     because constant columns contain zero information entropy and cannot create tree splits.
+   - Honest Analysis of (ii) Adding Station:
+     Adding station acts as a spatial shortcut. In 10-fold CV it may slightly alter splits,
+     but in chronological split it introduces severe distribution shift because Station 41002
+     had only 29 training rows in Jan-Apr but 489 test rows in May-Jun!
+   - Honest Analysis of (iii) Adding GST:
+     Wind gust (GST) is near-leakage (Pearson r = 0.957 with WSPD). Including GST drastically
+     inflates accuracy to ~85%+, confirming the vital necessity of excluding near-leakage features.

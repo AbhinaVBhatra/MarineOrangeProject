@@ -1,0 +1,6 @@
+Attribute,Plausibility_Min,Plausibility_Max,Observed_Min,Observed_Max,Valid_Observations,Out_Of_Bounds_Count,Status
+WSPD (m s-1),0.0,50.0,0.1,15.3,1965,0,Valid
+GST (m s-1),0.0,70.0,0.7,19.8,1965,0,Valid
+BAR (hPa),900.0,1100.0,1000.7,1033.2,1965,0,Valid
+ATMP (degree_C),-40.0,50.0,3.2,30.9,1965,0,Valid
+WTMP (degree_C),-2.0,40.0,21.7,29.7,518,0,Valid

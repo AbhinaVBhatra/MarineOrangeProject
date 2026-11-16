@@ -1,0 +1,3 @@
+station,row_count,start_time,end_time,lat,lon,time (UTC)_missing_pct,latitude (degrees_north)_missing_pct,longitude (degrees_east)_missing_pct,WSPD (m s-1)_missing_pct,GST (m s-1)_missing_pct,WVHT (m)_missing_pct,DPD (s)_missing_pct,APD (s)_missing_pct,BAR (hPa)_missing_pct,ATMP (degree_C)_missing_pct,WTMP (degree_C)_missing_pct
+41002,518,2025-04-27 09:00:00+00:00,2025-06-30 23:50:00+00:00,31.887,-74.921,0.0,0.0,0.0,0.0,0.0,100.0,100.0,100.0,0.0,0.0,0.0
+42040,1449,2025-01-01 00:00:00+00:00,2025-06-30 23:50:00+00:00,29.212,-88.207,0.0,0.0,0.0,0.13802622498274672,0.13802622498274672,100.0,100.0,100.0,0.13802622498274672,0.13802622498274672,100.0

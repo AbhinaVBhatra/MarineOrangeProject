@@ -1,0 +1,14 @@
+Column,Missing_Count,Missing_Percent
+station,0,0.0
+time (UTC),0,0.0
+latitude (degrees_north),0,0.0
+longitude (degrees_east),0,0.0
+WSPD (m s-1),2,0.10167768174885612
+GST (m s-1),2,0.10167768174885612
+WVHT (m),1967,100.0
+DPD (s),1967,100.0
+APD (s),1967,100.0
+BAR (hPa),2,0.10167768174885612
+ATMP (degree_C),2,0.10167768174885612
+WTMP (degree_C),1449,73.66548042704626
+parsed_time,0,0.0

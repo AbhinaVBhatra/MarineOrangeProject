@@ -1,0 +1,6 @@
+Feature,Scope,N,Mean,Std,Median,IQR,Min,Max,Skewness
+WSPD (m s-1),All Stations (Core),1963,5.921,2.755,5.7,3.7,0.1,15.3,0.463
+GST (m s-1),All Stations (Core),1963,7.561,3.396,7.2,4.3,0.7,19.8,0.644
+BAR (hPa),All Stations (Core),1963,1018.725,4.588,1018.8,5.9,1000.7,1033.2,0.227
+ATMP (degree_C),All Stations (Core),1963,22.731,5.095,23.6,6.5,3.2,30.9,-1.112
+WTMP (degree_C),Station 41002 Only,518,25.73,2.228,25.8,4.3,21.7,29.7,-0.267

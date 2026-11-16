@@ -1,0 +1,7 @@
+Pipeline,Station,Raw_Rows,Rows_Kept,Rows_Removed,Pct_Removed,Reason
+"Core Meteorological (WSPD, GST, BAR, ATMP)",All Stations,1967,1963,4,0.2,"Removed 4 rows with missing sensor readings at Station 42040 (2 missing BAR, 2 missing WSPD/GST/ATMP); 0 rows violated plausibility bounds."
+"Core Meteorological (WSPD, GST, BAR, ATMP)",Station 41002,518,518,0,0.0,All records valid
+"Core Meteorological (WSPD, GST, BAR, ATMP)",Station 42040,1449,1445,4,0.28,Missing sensor readings on 2 records
+WTMP Subset (Core + Water Temp),All Stations,1967,518,1449,73.67,"Station 42040 completely lacks WTMP sensor (1,449 rows dropped). Only Station 41002 retained."
+WTMP Subset (Core + Water Temp),Station 41002,518,518,0,0.0,All records valid with WTMP
+WTMP Subset (Core + Water Temp),Station 42040,1449,0,1449,100.0,Station 42040 lacks WTMP sensor (100% loss)

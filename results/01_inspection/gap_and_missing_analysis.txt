@@ -1,0 +1,45 @@
+======================================================================
+INVESTIGATION OF 1,967 ROWS AND 34% MISSING VALUES IN ORANGE
+======================================================================
+
+1. ROW COUNT GAP ANALYSIS (Expected ~4,300 vs Actual 1,967):
+   - Query interval: Jan 1, 2025 00:00:00Z to Jun 30, 2025 23:50:00Z (181 days).
+   - Theoretical 3-hourly frequency: 24h / 3h = 8 readings/day.
+   - Expected readings per fully reporting station: 181 * 8 = 1,448 timestamps.
+   - Expected rows across 3 intended stations: 1,448 * 3 = 4,344 rows.
+   - Observed Stations in CSV: ONLY 2 stations (Station 42040 and Station 41002).
+     * A 3rd intended station was completely omitted or returned 0 rows in the download query.
+   - Breakdown of Observed Stations:
+     * Station 42040: 1449 rows
+       Date range: 2025-01-01 00:00:00+00:00 to 2025-06-30 23:50:00+00:00 (181.0 days)
+       Note: Covers full 6 months (1,449 rows matches theoretical ~1,448 slots).
+     * Station 41002: 518 rows
+       Date range: 2025-04-27 09:00:00+00:00 to 2025-06-30 23:50:00+00:00 (64.6 days)
+       Note: Severely truncated timespan! Starts on 2025-04-27 09:00:00Z (missing Jan 1 - Apr 27).
+       Only 64.6 days observed out of 181 days (~116 days missing, ~930 expected rows lost).
+   - Total rows observed: 1967 rows.
+
+2. ORANGE 34% MISSINGNESS EXPLANATION:
+   - Number of rows: 1967
+   - Number of numeric attributes in feature matrix X: 11
+   - Total feature matrix cells (1967 * 11): 21637
+   - Total missing cells: 7358
+   - Exact missing % reported by Orange: 34.01% (rounds to 34%)
+
+   - Attribution of Missing Cells by Column:
+     * station                   :     0 missing (  0.00%)
+     * latitude (degrees_north)  :     0 missing (  0.00%)
+     * longitude (degrees_east)  :     0 missing (  0.00%)
+     * WSPD (m s-1)              :     2 missing (  0.10%)
+     * GST (m s-1)               :     2 missing (  0.10%)
+     * WVHT (m)                  :  1967 missing (100.00%)
+     * DPD (s)                   :  1967 missing (100.00%)
+     * APD (s)                   :  1967 missing (100.00%)
+     * BAR (hPa)                 :     2 missing (  0.10%)
+     * ATMP (degree_C)           :     2 missing (  0.10%)
+     * WTMP (degree_C)           :  1449 missing ( 73.67%)
+
+   - Root Cause of Missingness:
+     * WVHT (m), DPD (s), APD (s): 100.00% MISSING (1,967/1,967 rows). Neither station recorded wave metrics.
+     * WTMP (degree_C): 73.67% MISSING (1,449/1,967 rows). Station 42040 has no water temperature sensor.
+     * WSPD, GST, BAR, ATMP: 0.10% MISSING (only 2 timestamps at Station 42040 missing).

@@ -1,0 +1,20 @@
+INVESTIGATION OF 1,967 vs ~4,300 EXPECTED ROWS GAP:
+============================================================
+Theoretical expectation: Jan 1, 2025 to Jun 30, 2025 is 181 days.
+At 3-hourly intervals, each day has 8 time slots: 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00.
+181 days * 8 = 1,448 expected readings per station.
+For 3 distinct stations, 1,448 * 3 = 4,344 total potential rows.
+
+Actual rows observed per station:
+Station 41002:
+  Observed rows: 518
+  Date range: 2025-04-27 09:00:00+00:00 to 2025-06-30 23:50:00+00:00
+  Timespan covered: 64.62 days
+  Theoretical slots in covered span: ~516
+
+Station 42040:
+  Observed rows: 1449
+  Date range: 2025-01-01 00:00:00+00:00 to 2025-06-30 23:50:00+00:00
+  Timespan covered: 180.99 days
+  Theoretical slots in covered span: ~1447
+

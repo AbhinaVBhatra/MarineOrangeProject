@@ -1,0 +1,46 @@
+======================================================================
+K-MEANS CLUSTERING ANALYSIS REPORT
+======================================================================
+
+1. SILHOUETTE COEFFICIENT BY K:
+   - k = 2: Silhouette = 0.3537, Inertia = 5095.42
+   - k = 3: Silhouette = 0.3338, Inertia = 3716.41
+   - k = 4: Silhouette = 0.2819, Inertia = 2995.17
+   - k = 5: Silhouette = 0.2813, Inertia = 2540.74
+   - k = 6: Silhouette = 0.2869, Inertia = 2209.61
+
+   Optimal k by silhouette: k = 2 (Silhouette: 0.3537)
+
+2. CHOSEN CLUSTER MODEL: k = 2
+   - Cluster 1 (N = 1317, 67.09%):
+     * Wind Speed: 4.455 ± 1.715 m/s
+     * Wind Gust:  5.698 ± 1.922 m/s
+     * Pressure:   1018.586 ± 3.51 hPa
+     * Air Temp:   24.366 ± 3.821 °C
+   - Cluster 2 (N = 646, 32.91%):
+     * Wind Speed: 8.911 ± 1.933 m/s
+     * Wind Gust:  11.359 ± 2.449 m/s
+     * Pressure:   1019.01 ± 6.228 hPa
+     * Air Temp:   19.397 ± 5.708 °C
+
+3. CROSS-TABULATION VS BUOY STATION:
+station    41002  42040   All
+cluster                      
+Cluster 1    401    916  1317
+Cluster 2    117    529   646
+All          518   1445  1963
+
+4. ADJUSTED RAND INDEX (ARI) EVALUATION:
+   - Adjusted Rand Index vs Station (k=2): -0.0243
+   - Adjusted Rand Index vs Station (k=3): -0.0251
+   - Interpretation:
+     The low ARI value (-0.0243) confirms that the unsupervised k-Means clusters
+     DO NOT merely replicate the geographic buoy stations. Instead, they represent
+     distinct, cross-station meteorological regimes (e.g. calm warm conditions vs
+     disturbed windy high-seas conditions) that occur at both geographic locations.
+
+5. NEUTRAL METEOROLOGICAL CHARACTERIZATION (Academic Safety Notice):
+   Per project guidelines, clusters are described strictly by physical measurements,
+   NOT as 'safe/dangerous' and NOT as Potential Fishing Zones (PFZs):
+   - Cluster 1: Characterized by mean wind speed of 4.46 m/s, barometric pressure of 1018.59 hPa, and air temperature of 24.37 °C.
+   - Cluster 2: Characterized by mean wind speed of 8.91 m/s, barometric pressure of 1019.01 hPa, and air temperature of 19.40 °C.

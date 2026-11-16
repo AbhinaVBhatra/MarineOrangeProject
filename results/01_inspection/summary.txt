@@ -1,0 +1,98 @@
+Total rows: 1967
+Total columns: 12
+Columns: ['station', 'time (UTC)', 'latitude (degrees_north)', 'longitude (degrees_east)', 'WSPD (m s-1)', 'GST (m s-1)', 'WVHT (m)', 'DPD (s)', 'APD (s)', 'BAR (hPa)', 'ATMP (degree_C)', 'WTMP (degree_C)']
+
+Data types:
+station                       int64
+time (UTC)                   object
+latitude (degrees_north)    float64
+longitude (degrees_east)    float64
+WSPD (m s-1)                float64
+GST (m s-1)                 float64
+WVHT (m)                    float64
+DPD (s)                     float64
+APD (s)                     float64
+BAR (hPa)                   float64
+ATMP (degree_C)             float64
+WTMP (degree_C)             float64
+dtype: object
+
+Duplicate rows: 0
+
+Overall Time range: 2025-01-01 00:00:00+00:00 to 2025-06-30 23:50:00+00:00
+
+Stations breakdown:
+station
+42040    1449
+41002     518
+Name: count, dtype: int64
+
+Station 41002:
+  Rows: 518
+  Time min: 2025-04-27 09:00:00+00:00, Time max: 2025-06-30 23:50:00+00:00
+  Latitude: [31.887], Longitude: [-74.921]
+  Missing values %:
+station                       0.0
+time (UTC)                    0.0
+latitude (degrees_north)      0.0
+longitude (degrees_east)      0.0
+WSPD (m s-1)                  0.0
+GST (m s-1)                   0.0
+WVHT (m)                    100.0
+DPD (s)                     100.0
+APD (s)                     100.0
+BAR (hPa)                     0.0
+ATMP (degree_C)               0.0
+WTMP (degree_C)               0.0
+parsed_time                   0.0
+dtype: float64
+
+Station 42040:
+  Rows: 1449
+  Time min: 2025-01-01 00:00:00+00:00, Time max: 2025-06-30 23:50:00+00:00
+  Latitude: [29.212], Longitude: [-88.207]
+  Missing values %:
+station                       0.000000
+time (UTC)                    0.000000
+latitude (degrees_north)      0.000000
+longitude (degrees_east)      0.000000
+WSPD (m s-1)                  0.138026
+GST (m s-1)                   0.138026
+WVHT (m)                    100.000000
+DPD (s)                     100.000000
+APD (s)                     100.000000
+BAR (hPa)                     0.138026
+ATMP (degree_C)               0.138026
+WTMP (degree_C)             100.000000
+parsed_time                   0.000000
+dtype: float64
+
+Overall Missing % per column:
+station                       0.000000
+time (UTC)                    0.000000
+latitude (degrees_north)      0.000000
+longitude (degrees_east)      0.000000
+WSPD (m s-1)                  0.101678
+GST (m s-1)                   0.101678
+WVHT (m)                    100.000000
+DPD (s)                     100.000000
+APD (s)                     100.000000
+BAR (hPa)                     0.101678
+ATMP (degree_C)               0.101678
+WTMP (degree_C)              73.665480
+parsed_time                   0.000000
+dtype: float64
+
+Numeric summary (min, max, mean, std, quartiles):
+            station  latitude (degrees_north)  ...  ATMP (degree_C)  WTMP (degree_C)
+count   1967.000000               1967.000000  ...      1965.000000       518.000000
+mean   41766.647687                 29.916448  ...        22.726921        25.730116
+std      457.301356                  1.178498  ...         5.093576         2.227692
+min    41002.000000                 29.212000  ...         3.200000        21.700000
+25%    41002.000000                 29.212000  ...        20.300000        23.500000
+50%    42040.000000                 29.212000  ...        23.600000        25.800000
+75%    42040.000000                 31.887000  ...        26.800000        27.800000
+max    42040.000000                 31.887000  ...        30.900000        29.700000
+
+[8 rows x 11 columns]
+

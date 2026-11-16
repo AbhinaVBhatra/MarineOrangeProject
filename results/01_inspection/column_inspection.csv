@@ -1,0 +1,14 @@
+Attribute,Data_Type,Total_Count,Missing_Count,Missing_Pct,Unique_Values,Min_Value,Max_Value
+station,int64,1967,0,0.0,2,41002,42040
+time (UTC),object,1967,0,0.0,1450,2025-01-01T00:00:00Z,2025-06-30T23:50:00Z
+latitude (degrees_north),float64,1967,0,0.0,2,29.212,31.887
+longitude (degrees_east),float64,1967,0,0.0,2,-88.207,-74.921
+WSPD (m s-1),float64,1967,2,0.1017,141,0.1,15.3
+GST (m s-1),float64,1967,2,0.1017,176,0.7,19.8
+WVHT (m),float64,1967,1967,100.0,0,,
+DPD (s),float64,1967,1967,100.0,0,,
+APD (s),float64,1967,1967,100.0,0,,
+BAR (hPa),float64,1967,2,0.1017,236,1000.7,1033.2
+ATMP (degree_C),float64,1967,2,0.1017,240,3.2,30.9
+WTMP (degree_C),float64,1967,1449,73.6655,79,21.7,29.7
+parsed_time,"datetime64[ns, UTC]",1967,0,0.0,1450,2025-01-01 00:00:00+00:00,2025-06-30 23:50:00+00:00

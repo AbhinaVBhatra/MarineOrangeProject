@@ -1,0 +1,56 @@
+======================================================================
+DECISION TREE RULES (max_depth=5, min_samples_leaf=20)
+Trained on Chronological Split (Jan-Apr 2025, N=985)
+Predictors: BAR (hPa), ATMP (degree_C)
+Target: Marine Condition Terciles (Low, Mid, High)
+======================================================================
+
+|--- BAR (hPa) <= 1016.75
+|   |--- ATMP (degree_C) <= 17.90
+|   |   |--- class: High
+|   |--- ATMP (degree_C) >  17.90
+|   |   |--- BAR (hPa) <= 1009.95
+|   |   |   |--- class: High
+|   |   |--- BAR (hPa) >  1009.95
+|   |   |   |--- ATMP (degree_C) <= 23.75
+|   |   |   |   |--- ATMP (degree_C) <= 19.55
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- ATMP (degree_C) >  19.55
+|   |   |   |   |   |--- class: High
+|   |   |   |--- ATMP (degree_C) >  23.75
+|   |   |   |   |--- class: High
+|--- BAR (hPa) >  1016.75
+|   |--- ATMP (degree_C) <= 11.25
+|   |   |--- BAR (hPa) <= 1026.15
+|   |   |   |--- class: High
+|   |   |--- BAR (hPa) >  1026.15
+|   |   |   |--- ATMP (degree_C) <= 7.05
+|   |   |   |   |--- class: High
+|   |   |   |--- ATMP (degree_C) >  7.05
+|   |   |   |   |--- ATMP (degree_C) <= 8.75
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- ATMP (degree_C) >  8.75
+|   |   |   |   |   |--- class: High
+|   |--- ATMP (degree_C) >  11.25
+|   |   |--- ATMP (degree_C) <= 21.75
+|   |   |   |--- BAR (hPa) <= 1025.00
+|   |   |   |   |--- BAR (hPa) <= 1021.55
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- BAR (hPa) >  1021.55
+|   |   |   |   |   |--- class: Low
+|   |   |   |--- BAR (hPa) >  1025.00
+|   |   |   |   |--- BAR (hPa) <= 1025.95
+|   |   |   |   |   |--- class: Mid
+|   |   |   |   |--- BAR (hPa) >  1025.95
+|   |   |   |   |   |--- class: High
+|   |   |--- ATMP (degree_C) >  21.75
+|   |   |   |--- ATMP (degree_C) <= 24.25
+|   |   |   |   |--- ATMP (degree_C) <= 23.85
+|   |   |   |   |   |--- class: Mid
+|   |   |   |   |--- ATMP (degree_C) >  23.85
+|   |   |   |   |   |--- class: Mid
+|   |   |   |--- ATMP (degree_C) >  24.25
+|   |   |   |   |--- BAR (hPa) <= 1019.35
+|   |   |   |   |   |--- class: Low
+|   |   |   |   |--- BAR (hPa) >  1019.35
+|   |   |   |   |   |--- class: Low

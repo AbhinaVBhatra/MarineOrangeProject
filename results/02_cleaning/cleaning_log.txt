@@ -1,0 +1,41 @@
+======================================================================
+DATA PREPROCESSING AND CLEANING LOG
+======================================================================
+
+1. MISSINGNESS-BASED FEATURE SELECTION DECISION:
+   - Rule: Drop column if missingness exceeds threshold of 50.0%.
+   - Evaluated Columns:
+     * station                   :   0.00% missing -> RETAINED
+     * time (UTC)                :   0.00% missing -> RETAINED
+     * latitude (degrees_north)  :   0.00% missing -> RETAINED
+     * longitude (degrees_east)  :   0.00% missing -> RETAINED
+     * WSPD (m s-1)              :   0.10% missing -> RETAINED
+     * GST (m s-1)               :   0.10% missing -> RETAINED
+     * WVHT (m)                  : 100.00% missing -> DROPPED (>50% null)
+     * DPD (s)                   : 100.00% missing -> DROPPED (>50% null)
+     * APD (s)                   : 100.00% missing -> DROPPED (>50% null)
+     * BAR (hPa)                 :   0.10% missing -> RETAINED
+     * ATMP (degree_C)           :   0.10% missing -> RETAINED
+     * WTMP (degree_C)           :  73.67% missing -> DROPPED (>50% null)
+
+   - Consequence:
+     * WVHT (m), DPD (s), APD (s) are 100.0% missing across all 1,967 rows.
+       They contain zero data and MUST be dropped.
+     * WTMP (degree_C) is 73.67% missing (present solely at Station 41002; 0% at Station 42040).
+       To prevent dropping 100% of Station 42040, the primary core pipeline retains
+       WSPD, GST, BAR, and ATMP. A secondary specialized pipeline evaluates Station 41002 with WTMP.
+
+2. PLAUSIBILITY BOUNDS VERIFICATION (Analyst-defined heuristic limits):
+   - WSPD: [0.0, 50.0] m/s -> Observed: [0.10, 15.30] m/s (0 violations)
+   - GST:  [0.0, 70.0] m/s -> Observed: [0.70, 19.80] m/s (0 violations)
+   - BAR:  [900.0, 1100.0] hPa -> Observed: [1000.70, 1033.20] hPa (0 violations)
+   - ATMP: [-40.0, 50.0] °C -> Observed: [3.20, 30.90] °C (0 violations)
+   - WTMP: [-2.0, 40.0] °C -> Observed: [21.70, 29.70] °C (0 violations)
+
+3. ROW REMOVAL SUMMARY:
+   - Core Pipeline: 1,963 rows retained (99.80%), 4 rows removed (missing sensor readouts at Station 42040).
+     * Station 42040: 1,445 / 1,449 rows retained (99.72%)
+     * Station 41002: 518 / 518 rows retained (100.00%)
+   - WTMP Pipeline: 518 rows retained (26.33%), 1,449 rows removed.
+     * Station 42040 completely dropped (100% row loss due to absent WTMP payload).
+     * Discussion: Requiring WTMP introduces severe spatial bias, collapsing the dataset to only Station 41002.
