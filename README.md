@@ -1,5 +1,6 @@
 # MarineOrangeProject
 Marine Condition Analysis and Classification Using Data Mining
+
 # Marine Condition Analysis and Classification Using Data Mining
 
 [![Research Paper DOI](https://zenodo.org)](https://doi.org)
@@ -11,8 +12,8 @@ An empirical investigation of in-situ meteorological buoy observations from the 
 ## 📄 Associated Research Paper
 * **Title:** Marine Condition Analysis and Classification Using Data Mining
 * **Authors:** Abhinav Bhatra (Researcher), Abhilasha Deshwar (Supervisor)
-* **Published:** October 22, 2026
-* **Zenodo Paper Link:** [https://doi.org](https://doi.org)
+* **Published:** October 22, 2026 (Version v1)
+* **Zenodo Paper DOI:** [10.5281/zenodo.23571040](https://doi.org)
 
 ## 📂 Repository Contents
 * `workflows/` — Orange Data Mining workflow files (`.ows`)
@@ -30,4 +31,5 @@ An empirical investigation of in-situ meteorological buoy observations from the 
 4. Verify that the **File** widget points to the dataset in the `data/` folder.
 
 ## 📚 Citation
-If you use this workflow or refer to our findings, please cite both the software repository and the research paper using the **"Cite this repository"** button on the right sidebar (powered by `CITATION.cff`).
+If you use this workflow or refer to our findings, please cite both the software repository (`10.5281/zenodo.24279983`) and the research paper (`10.5281/zenodo.23571040`) using the **"Cite this repository"** button on the right sidebar.
+
