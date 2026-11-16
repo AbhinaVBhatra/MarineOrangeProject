@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Orange Data Mining temporary and backup files
+*.ows~
+*.ows.bak
+.orange/
+
+# OS-generated clutter
+.DS_Store
+Thumbs.db
+desktop.ini
