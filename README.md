@@ -13,7 +13,7 @@ An empirical investigation of in-situ meteorological buoy observations from the 
 * **Title:** Marine Condition Analysis and Classification Using Data Mining
 * **Authors:** Abhinav Bhatra (Researcher), Abhilasha Deshwar (Supervisor)
 * **Published:** October 22, 2026 (Version v1)
-* **Zenodo Paper DOI:** [10.5281/zenodo.23571040](https://doi.org)
+* **Zenodo Paper DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23571040.svg)](https://doi.org/10.5281/zenodo.23571040)
 
 ## 📂 Repository Contents
 * `workflows/` — Orange Data Mining workflow files (`.ows`)
