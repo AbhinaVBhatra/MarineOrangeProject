@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this Orange Data Mining workflow or dataset, please cite both the software archive and the associated research paper below."
+title: "Marine Condition Analysis and Classification Using Data Mining"
+type: software
+version: 1.0.0
+date-released: 2026-11-16
+doi: 10.5281/zenodo.24279983
+url: "https://github.com"
+authors:
+  - family-names: "Bhatra"
+    given-names: "Abhinav"
+  - family-names: "Deshwar"
+    given-names: "Abhilasha"
+license: MIT
+keywords:
+  - "data mining"
+  - "orange data mining"
+  - "marine condition classification"
+  - "CRISP-DM"
+  - "meteorological buoy observations"
+preferred-citation:
+  type: article
+  title: "Marine Condition Analysis and Classification Using Data Mining"
+  authors:
+    - family-names: "Bhatra"
+      given-names: "Abhinav"
+    - family-names: "Deshwar"
+      given-names: "Abhilasha"
+  year: 2026
+  month: 10
+  doi: 10.5281/zenodo.23571040
+  url: "https://doi.org"
+
