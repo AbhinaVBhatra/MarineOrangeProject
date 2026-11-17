@@ -3,7 +3,7 @@ Marine Condition Analysis and Classification Using Data Mining
 
 # Marine Condition Analysis and Classification Using Data Mining
 
-[![Research Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23571039.svg)](https://doi.org/10.5281/zenodo.23571039)
+[![Research Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23571040.svg)](https://doi.org/10.5281/zenodo.23571040)
 [![Orange Workflow DOI](https://zenodo.org/badge/1459903570.svg)](https://doi.org/10.5281/zenodo.24279982)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
