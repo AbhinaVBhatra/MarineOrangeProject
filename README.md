@@ -3,9 +3,9 @@ Marine Condition Analysis and Classification Using Data Mining
 
 # Marine Condition Analysis and Classification Using Data Mining
 
-[![Research Paper DOI](https://zenodo.org)](https://doi.org)
-[![Orange Workflow DOI](https://zenodo.org)](https://doi.org)
-[![License: MIT](https://shields.io)](https://opensource.org)
+[![Research Paper DOI](https://zenodo.org/badge/1459903570.svg)](https://doi.org/10/5281/zenodo.23571039)
+[![Orange Workflow DOI](https://zenodo.org/badge/1459903570.svg)](https://doi.org/10.5281/zenodo.24279982)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An empirical investigation of in-situ meteorological buoy observations from the NOAA National Data Buoy Center (Northwest Atlantic Ocean and Gulf of Mexico) modeled using the **CRISP-DM framework** in **Orange Data Mining**.
 
